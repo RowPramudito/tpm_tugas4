@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tpm_0604/anggota.dart';
 import 'package:tpm_0604/stopwatch.dart';
-import 'package:tpm_0604/recommended_site.dart';
+import 'package:tpm_0604/recommended.dart';
 import 'package:tpm_0604/favorite.dart';
 
 class MainPage extends StatelessWidget {
@@ -11,11 +11,6 @@ class MainPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
-        appBar: AppBar(
-          title: const Text(
-            'Main Page',
-          ),
-        ),
         body: Container(
           padding: const EdgeInsets.all(20),
           alignment: Alignment.center,

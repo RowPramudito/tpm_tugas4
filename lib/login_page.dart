@@ -89,9 +89,6 @@ class _LoginPageState extends State<LoginPage> {
       width: 120,
       height: 60,
       child: ElevatedButton(
-        style: ElevatedButton.styleFrom(
-          primary: Colors.black,
-        ),
         onPressed: (){
           String text = "";
 
