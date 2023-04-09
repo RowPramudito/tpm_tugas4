@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:tpm_0604/main_page.dart';
+import 'package:tpm_0604/menu.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({Key? key}) : super(key: key);
@@ -103,7 +103,7 @@ class _LoginPageState extends State<LoginPage> {
             Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(builder: (context) {
-                  return MainPage();
+                  return MenuPage();
                 })
             );
           }

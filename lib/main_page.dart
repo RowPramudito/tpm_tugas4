@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:tpm_0604/anggota.dart';
 import 'package:tpm_0604/stopwatch.dart';
+import 'package:tpm_0604/recommended_site.dart';
+import 'package:tpm_0604/favorite.dart';
 
 class MainPage extends StatelessWidget {
   const MainPage({Key? key}) : super(key: key);
@@ -51,14 +53,28 @@ class MainPage extends StatelessWidget {
                 child: ListTile(
                   leading: const Icon(Icons.web),
                   title: const Text('Site Rekomendasi'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return Recommended();
+                        })
+                    );
+                  },
                 ),
               ),
               Card(
                 child: ListTile(
                   leading: const Icon(Icons.favorite),
                   title: const Text('Favorite'),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return Favorites();
+                        })
+                    );
+                  },
                 ),
               ),
             ],
