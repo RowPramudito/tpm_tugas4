@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tpm_0604/game_store.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Recommended extends StatefulWidget {
   const Recommended({Key? key}) : super(key: key);
@@ -20,6 +21,8 @@ class _RecommendedState extends State<Recommended> {
             itemBuilder: (context, index) {
               final GameStore game = gameList[index];
               final alreadyAdded = gameFavList.contains(game);
+              final Uri _url = Uri.parse(game.linkStore);
+
               return ListTile(
                 leading: Image.network(
                   game.imageUrls[0],
@@ -28,18 +31,24 @@ class _RecommendedState extends State<Recommended> {
                 ),
                 title: Text(game.name),
                 subtitle: Text(game.price),
-                trailing: Icon(
-                  alreadyAdded ? Icons.favorite : Icons.favorite_border,
-                  color: alreadyAdded ? Colors.red : null,
+                trailing: IconButton(
+                  icon: Icon(
+                    alreadyAdded ? Icons.favorite : Icons.favorite_border,
+                    color: alreadyAdded ? Colors.red : null,
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      if(alreadyAdded) {
+                        gameFavList.remove(game);
+                      }
+                      else {
+                        gameFavList.add(game);
+                      }
+                    });
+                  },
                 ),
                 onTap: () {
-                  setState(() {
-                    if (alreadyAdded) {
-                      gameFavList.remove(game);
-                    } else {
-                      gameFavList.add(game);
-                    }
-                  });
+                  launchUrl(_url);
                 },
               );
             }
