@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tpm_0604/logout.dart';
 import 'package:tpm_0604/main_page.dart';
-
+import 'package:tpm_0604/tutrorial_page.dart';
 class MenuPage extends StatefulWidget {
   const MenuPage({Key? key}) : super(key: key);
 
@@ -16,7 +16,7 @@ class _MenuPageState extends State<MenuPage> {
   TextStyle(fontSize: 30, fontWeight: FontWeight.bold);
   static List<Widget> _widgetOptions = <Widget>[
     MainPage(),
-    Text('Tutorial'),
+    TutorPage(),
     LogoutPage()
   ];
 
